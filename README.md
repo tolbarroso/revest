@@ -22,33 +22,30 @@ Cada peça comunica propósito, transformação e identidade cristã de forma vi
 - **CSS3**
 - **JavaScript Vanilla**
 - **Swiper.js** (para o carrossel de imagens)
-- **Google Fonts** (Playfair Display & Inter)
 - **Lovable.dev** (para deploy visual low-code)
 
 ## 🧑‍💻 Como rodar localmente
 
-Clone este repositório e abra o `index.html` em seu navegador:
+Clone este repositório e instale as dependências:
 
 ```bash
 git clone https://github.com/tolbarroso/revest-site.git
 cd revest-site
+npm install
+npm run dev
 ```
 
 Abra o arquivo `index.html` em seu navegador ou utilize a extensão Live Server no VS Code.
 
 ## 🚀 Deploy
 
-Este projeto está publicado via **Lovable** com domínio gratuito.  
-Você pode duplicar e personalizar o site diretamente em: [https://lovable.dev](https://lovable.dev)
+Este projeto está publicado gratuitamente na **Vercel**.
 
-## 📝 Customização
+Para publicar seu próprio fork:
 
-Você pode alterar facilmente:
-
-- Os produtos, descrições e preços em `/index.html`
-- As cores e fontes no `/style.css`
-- As imagens do carrossel em `/img/`
-- O link do botão de WhatsApp com sua mensagem personalizada
+1. Faça o deploy via [Vercel](https://vercel.com)
+2. Conecte o repositório
+3. (Opcional) Aponte seu domínio personalizado
 
 ## 📌 Créditos
 
