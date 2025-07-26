@@ -51,7 +51,7 @@ const products = [
 
 export const ProductsSection = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="products-section py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-brand text-4xl md:text-5xl font-bold mb-6 text-foreground">

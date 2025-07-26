@@ -46,9 +46,11 @@ export const HeroCarousel = () => {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };
 
-  const handleWhatsApp = () => {
-    const message = `Olá! Gostaria de conhecer mais sobre a REVEST e seus produtos de moda cristã.`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+  const scrollToProducts = () => {
+    const productsSection = document.querySelector('.products-section');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -78,7 +80,7 @@ export const HeroCarousel = () => {
                   {slide.description}
                 </p>
                 <Button
-                  onClick={handleWhatsApp}
+                  onClick={scrollToProducts}
                   variant="whatsapp"
                   size="lg"
                   className="text-lg px-8 py-4"
