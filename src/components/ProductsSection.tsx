@@ -71,21 +71,18 @@ export const ProductsSection = () => {
 
         <div className="text-center mt-16">
           <div className="bg-gradient-card p-8 rounded-2xl shadow-brand max-w-2xl mx-auto">
-            <h3 className="font-brand text-2xl font-semibold mb-4 text-foreground">
+            <h3 className="font-brand text-2xl font-semibold mb-6 text-foreground">
               Não encontrou o que procurava?
             </h3>
-            <p className="font-body text-muted-foreground mb-6">
-              Entre em contato conosco e descubra mais opções da nossa coleção completa.
-            </p>
             <Button
               onClick={() => {
-                const message = "Olá! Gostaria de conhecer toda a coleção REVEST e suas novidades.";
+                const message = "Olá! Gostaria de entrar em contato com a REVEST.";
                 window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
               }}
               variant="whatsapp"
               size="lg"
             >
-              Ver Coleção Completa
+              Entre em contato conosco
             </Button>
           </div>
         </div>
