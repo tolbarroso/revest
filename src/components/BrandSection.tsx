@@ -1,13 +1,21 @@
 import { Heart, Cross, Sparkles } from 'lucide-react';
+import revestLogo from '@/assets/revest-logo.png';
 
 export const BrandSection = () => {
   return (
     <section className="py-20 px-4 bg-gradient-card">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-brand text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            REVEST
-          </h2>
+         <div className="text-center mb-16">
+           <div className="mb-6">
+             <img 
+               src={revestLogo} 
+               alt="REVEST" 
+               className="mx-auto h-12 md:h-16 object-contain"
+             />
+           </div>
+           <h2 className="font-brand text-4xl md:text-5xl font-bold mb-6 text-foreground">
+             REVEST
+           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mais que uma marca de roupas, somos um movimento que acredita no poder da moda 
             como expressão da fé. Cada peça carrega uma mensagem de esperança, 

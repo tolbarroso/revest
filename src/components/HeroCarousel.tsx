@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroBanner1 from '@/assets/hero-banner-1.jpg';
+import revestLogo from '@/assets/revest-logo.png';
 
 const heroSlides = [
   {
@@ -68,11 +69,18 @@ export const HeroCarousel = () => {
           >
             <div className="hero-overlay absolute inset-0"></div>
             
-            <div className="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
-              <div className="max-w-4xl mx-auto">
-                <h1 className="font-brand text-6xl md:text-8xl font-bold mb-4 tracking-wider">
-                  {slide.title}
-                </h1>
+             <div className="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
+               <div className="max-w-4xl mx-auto">
+                 <div className="mb-6">
+                   <img 
+                     src={revestLogo} 
+                     alt="REVEST" 
+                     className="mx-auto h-16 md:h-20 object-contain filter brightness-0 invert"
+                   />
+                 </div>
+                 <h1 className="font-brand text-6xl md:text-8xl font-bold mb-4 tracking-wider">
+                   {slide.title}
+                 </h1>
                 <h2 className="font-brand text-2xl md:text-3xl mb-6 text-accent font-semibold">
                   {slide.subtitle}
                 </h2>

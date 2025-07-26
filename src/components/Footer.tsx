@@ -1,4 +1,5 @@
 import { Instagram, MessageCircle, Mail } from 'lucide-react';
+import revestLogo from '@/assets/revest-logo.png';
 
 export const Footer = () => {
   const handleWhatsApp = () => {
@@ -10,8 +11,15 @@ export const Footer = () => {
     <footer className="bg-primary text-primary-foreground py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div>
-            <h3 className="font-brand text-2xl font-bold mb-4">REVEST</h3>
+           <div>
+             <div className="mb-4">
+               <img 
+                 src={revestLogo} 
+                 alt="REVEST" 
+                 className="h-8 object-contain filter brightness-0 invert"
+               />
+             </div>
+             <h3 className="font-brand text-2xl font-bold mb-4">REVEST</h3>
             <p className="font-body text-primary-foreground/80 leading-relaxed">
               Moda cristã com propósito. Vista sua fé com estilo e identidade, 
               expressando valores eternos através de designs contemporâneos.
