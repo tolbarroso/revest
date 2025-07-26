@@ -1,73 +1,56 @@
-# Welcome to your Lovable project
+# Revest — Moda Cristã com Propósito e Identidade
 
-## Project info
+## Info
 
-**URL**: https://lovable.dev/projects/52903ce1-0e23-4a71-8e86-febc62927193
+A **Revest** é uma landing page construída para apresentar a coleção inicial da marca de roupas cristãs contemporâneas.  
+Com um estilo minimalista e moderno, o site conecta fé e moda como forma de expressão autêntica da espiritualidade no dia a dia.  
+Cada peça comunica propósito, transformação e identidade cristã de forma visual, estética e acessível.
 
-## How can I edit this code?
+🔗 Acesse: [https://revest-site.vercel.app](https://revest-site.vercel.app)
 
-There are several ways of editing your application.
+## ✨ Funcionalidades
 
-**Use Lovable**
+- Apresentação visual dos produtos com nome, descrição e preço
+- Sessão institucional com missão, valores e versículo bíblico
+- Banner carrossel com identidade da marca
+- Botões de compra integrados ao WhatsApp
+- Layout responsivo e elegante
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/52903ce1-0e23-4a71-8e86-febc62927193) and start prompting.
+## 🛠 Tecnologias utilizadas
 
-Changes made via Lovable will be committed automatically to this repo.
+- **HTML5**
+- **CSS3**
+- **JavaScript Vanilla**
+- **Swiper.js** (para o carrossel de imagens)
+- **Google Fonts** (Playfair Display & Inter)
+- **Lovable.dev** (para deploy visual low-code)
 
-**Use your preferred IDE**
+## 🧑‍💻 Como rodar localmente
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone este repositório e abra o `index.html` em seu navegador:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+git clone https://github.com/tolbarroso/revest-site.git
+cd revest-site
 ```
 
-**Edit a file directly in GitHub**
+Abra o arquivo `index.html` em seu navegador ou utilize a extensão Live Server no VS Code.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 Deploy
 
-**Use GitHub Codespaces**
+Este projeto está publicado via **Lovable** com domínio gratuito.  
+Você pode duplicar e personalizar o site diretamente em: [https://lovable.dev](https://lovable.dev)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📝 Customização
 
-## What technologies are used for this project?
+Você pode alterar facilmente:
 
-This project is built with:
+- Os produtos, descrições e preços em `/index.html`
+- As cores e fontes no `/style.css`
+- As imagens do carrossel em `/img/`
+- O link do botão de WhatsApp com sua mensagem personalizada
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📌 Créditos
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/52903ce1-0e23-4a71-8e86-febc62927193) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Este projeto foi desenvolvido por [**Carol Barroso**](https://www.instagram.com/brandingbycb/) como parte do lançamento da marca **Revest — Cada peça, uma armadura.**  
+Inspirado em Efésios 6:11 — “Revesti-vos de toda a armadura de Deus”.
