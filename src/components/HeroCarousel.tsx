@@ -15,15 +15,15 @@ const heroSlides = [
   {
     id: 2,
     image: heroBanner1,
-    title: "FÉ EM MOVIMENTO",
-    subtitle: "Coleção Inspiração",
+    title: "REVEST",
+    subtitle: "Fé em Movimento",
     description: "Designs únicos que expressam valores eternos no seu dia a dia."
   },
   {
     id: 3,
     image: heroBanner1,
-    title: "IDENTIDADE CRISTÃ",
-    subtitle: "Estilo Contemporâneo",
+    title: "REVEST",
+    subtitle: "Identidade Cristã",
     description: "Conecte sua fé ao seu estilo pessoal com nossa linha exclusiva."
   }
 ];

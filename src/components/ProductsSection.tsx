@@ -3,49 +3,52 @@ import { Button } from '@/components/ui/button';
 import shirt1 from '@/assets/shirt-1.jpg';
 import shirt2 from '@/assets/shirt-2.jpg';
 import shirt3 from '@/assets/shirt-3.jpg';
+import shirt4 from '@/assets/shirt-4.jpg';
+import shirt5 from '@/assets/shirt-5.jpg';
+import shirt6 from '@/assets/shirt-6.jpg';
 
 const products = [
   {
     id: 1,
-    name: "Camiseta Fé & Esperança",
+    name: "Camiseta Jesus is The Way",
     description: "Design minimalista com mensagem inspiradora. Tecido premium 100% algodão para máximo conforto no seu dia a dia.",
     image: shirt1,
     price: "R$ 79,90"
   },
   {
     id: 2,
-    name: "Camiseta Cruz Moderna",
+    name: "Camiseta Cordeiro",
     description: "Estilo contemporâneo com símbolo da fé. Perfeita para expressar sua identidade cristã com elegância.",
     image: shirt2,
     price: "R$ 84,90"
   },
   {
     id: 3,
-    name: "Camiseta Verso Bíblico",
+    name: "Camiseta Tempo é Chegado",
     description: "Typography inspiradora com versículo bíblico. Uma forma única de carregar a Palavra com você.",
     image: shirt3,
-    price: "R$ 89,90"
+    price: "R$ 69,90"
   },
   {
     id: 4,
-    name: "Camiseta Graça Infinita",
+    name: "Camiseta Misericórdia",
     description: "Design exclusivo que celebra a graça divina. Qualidade superior e estilo atemporal.",
-    image: shirt1,
+    image: shirt4,
     price: "R$ 79,90"
   },
   {
     id: 5,
-    name: "Camiseta Luz do Mundo",
+    name: "Camiseta 2Timóteo 3:16",
     description: "Mensagem poderosa em design moderno. Ideal para quem busca impactar através do estilo.",
-    image: shirt2,
+    image: shirt5,
     price: "R$ 84,90"
   },
   {
     id: 6,
-    name: "Camiseta Renovação",
+    name: "Camiseta Biscoito",
     description: "Conceito de transformação em arte wearable. Expresse sua jornada de fé com autenticidade.",
-    image: shirt3,
-    price: "R$ 89,90"
+    image: shirt6,
+    price: "R$ 49,90"
   }
 ];
 

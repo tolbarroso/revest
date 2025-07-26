@@ -19,10 +19,10 @@ export const Footer = () => {
                  className="h-8 object-contain filter brightness-0 invert"
                />
              </div>
-             <h3 className="font-brand text-2xl font-bold mb-4">REVEST</h3>
+             <h3 className="font-brand text-2xl font-bold mb-4"></h3>
             <p className="font-body text-primary-foreground/80 leading-relaxed">
               Moda cristã com propósito. Vista sua fé com estilo e identidade, 
-              expressando valores eternos através de designs contemporâneos.
+              expressando valores eternos através de designs modernos.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center">
           <p className="font-body text-primary-foreground/60">
-            © 2024 REVEST. Todos os direitos reservados. | Desenvolvido com propósito e fé.
+            © 2025 REVEST. Todos os direitos reservados. | Revestidos da armadura de Deus.
           </p>
         </div>
       </div>

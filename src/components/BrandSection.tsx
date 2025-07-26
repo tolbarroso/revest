@@ -66,10 +66,9 @@ export const BrandSection = () => {
 
         <div className="text-center mt-16">
           <blockquote className="font-body text-2xl italic text-muted-foreground max-w-2xl mx-auto">
-            "Revesti-vos do novo homem, que segundo Deus foi criado em verdadeira 
-            justiça e santidade."
+            "Revesti-vos de toda a armadura de Deus, para poderdes ficar firmes contra as ciladas do diabo; porque a nossa luta não é contra o sangue e a carne, e sim contra os principados e potestades, contra os dominadores deste mundo tenebroso, contra as forças espirituais do mal, nas regiões celestes."
             <cite className="block mt-4 text-lg not-italic font-semibold text-accent">
-              Efésios 4:24
+              Efésios 6:11-12
             </cite>
           </blockquote>
         </div>
