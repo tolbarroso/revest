@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingCart, Check } from 'lucide-react';
 
 interface Product {
   id: number;
@@ -51,12 +52,12 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
             value={selectedSize}
             onChange={(e) => setSelectedSize(e.target.value)}
           >
-            <option value="PP">PP</option>
             <option value="P">P</option>
             <option value="M">M</option>
             <option value="G">G</option>
             <option value="GG">GG</option>
-            <option value="XG">XG</option>
+            <option value="G1">G1</option>
+            <option value="G2">G2</option>
           </select>
         </div>
 

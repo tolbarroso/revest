@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroBanner1 from '@/assets/hero-banner-1.jpg';
+import heroBanner1 from '@/assets/hero-banner-1.png';
 import revestLogo from '@/assets/revest-logo.png';
 
 const heroSlides = [
@@ -74,11 +74,14 @@ export const HeroCarousel = () => {
                  <div className="mb-6">
                    <img 
                      src={revestLogo} 
-                     alt="REVEST" 
+                     alt="RECON" 
                      className="mx-auto h-16 md:h-20 object-contain filter brightness-0 invert"
                    />
                  </div>
-                <h2 className="font-brand text-2xl md:text-3xl mb-6 text-accent font-semibold">
+                 <h1 className="font-brand text-6xl md:text-8xl font-bold mb-4 tracking-wider">
+                   {slide.title}
+                 </h1>
+                <h2 className="font-brand text-2xl md:text-3xl mb-6 text-white/90 font-semibold">
                   {slide.subtitle}
                 </h2>
                 <p className="font-body text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
