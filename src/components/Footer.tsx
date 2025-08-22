@@ -3,7 +3,7 @@ import revestLogo from '@/assets/revest-logo.png';
 
 export const Footer = () => {
   const handleWhatsApp = () => {
-    const message = "Olá! Gostaria de entrar em contato com a Loja Recon.";
+    const message = "Olá! Gostaria de entrar em contato com a Revest.";
     window.open(`https://wa.me/5581999014848?text=${encodeURIComponent(message)}`, '_blank');
   };
 
