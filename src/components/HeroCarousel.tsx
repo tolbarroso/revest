@@ -75,7 +75,7 @@ export const HeroCarousel = () => {
                    <img 
                      src={revestLogo} 
                      alt="RECON" 
-                     className="mx-auto h-20 md:h-28 object-contain filter brightness-0 invert"
+                     className="mx-auto h-28 md:h-36 object-contain filter brightness-0 invert"
                    />
                  </div>
                 <h2 className="font-brand text-2xl md:text-3xl mb-6 text-white/90 font-semibold">
