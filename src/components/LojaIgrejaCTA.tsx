@@ -8,7 +8,7 @@ export const LojaIgrejaCTA = () => {
   };
 
   return (
-    <section className="bg-[#fdf6ee] py-20 px-4">
+    <section className="bg-[#d9cfc5] py-20 px-4">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-brand font-bold mb-4 text-primary">
           Crie a loja da sua igreja conosco!
