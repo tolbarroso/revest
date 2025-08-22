@@ -13,9 +13,6 @@ export const BrandSection = () => {
                className="mx-auto h-12 md:h-16 object-contain"
              />
            </div>
-           <h2 className="font-brand text-4xl md:text-5xl font-bold mb-6 text-foreground">
-             REVEST
-           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mais que uma marca de roupas, somos um movimento que acredita no poder da moda 
             como expressão da fé. Cada peça carrega uma mensagem de esperança, 

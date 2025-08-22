@@ -9,21 +9,21 @@ const heroSlides = [
     id: 1,
     image: heroBanner1,
     title: "REVEST",
-    subtitle: "Moda Cristã com Propósito",
-    description: "Vista sua fé com estilo e identidade. Cada peça conta uma história de esperança e transformação."
+    subtitle: "Cada peça, uma armadura",
+    description: "Para uma geração que não tem medo de mostrar em quem crê."
   },
   {
     id: 2,
     image: heroBanner1,
     title: "REVEST",
-    subtitle: "Fé em Movimento",
+    subtitle: "Cada peça, uma armadura",
     description: "Designs únicos que expressam valores eternos no seu dia a dia."
   },
   {
     id: 3,
     image: heroBanner1,
     title: "REVEST",
-    subtitle: "Identidade Cristã",
+    subtitle: "Cada peça, uma armadura",
     description: "Conecte sua fé ao seu estilo pessoal com nossa linha exclusiva."
   }
 ];

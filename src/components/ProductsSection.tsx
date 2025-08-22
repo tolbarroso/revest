@@ -1,58 +1,81 @@
 import { ProductCard } from './ProductCard';
 import { Button } from '@/components/ui/button';
-import shirt1 from '@/assets/shirt-1.jpg';
-import shirt2 from '@/assets/shirt-2.jpg';
-import shirt3 from '@/assets/shirt-3.jpg';
-import shirt4 from '@/assets/shirt-4.jpg';
-import shirt5 from '@/assets/shirt-5.jpg';
-import shirt6 from '@/assets/shirt-6.jpg';
+import shirt1 from '@/assets/camisa-1.png';
+import shirt2 from '@/assets/camisa-2.png';
+import shirt3 from '@/assets/camisa-3.png';
+import shirt4 from '@/assets/camisa-4.png';
+import shirt5 from '@/assets/camisa-5.png';
+import shirt6 from '@/assets/camisa-6.png';
+import shirt7 from '@/assets/camisa-7.png';
+import shirt8 from '@/assets/camisa-8.png';
 
 const products = [
   {
     id: 1,
-    name: "Camiseta Jesus is The Way",
-    description: "Design minimalista com mensagem inspiradora. Tecido premium 100% algodão para máximo conforto no seu dia a dia.",
+    name: "Camiseta Básica Off White - Banquete",
+    description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
     image: shirt1,
-    price: "R$ 79,90"
+    price: "R$ 60,00"
   },
   {
     id: 2,
-    name: "Camiseta Cordeiro",
-    description: "Estilo contemporâneo com símbolo da fé. Perfeita para expressar sua identidade cristã com elegância.",
+    name: "Camiseta Básica Areia - Banquete",
+    description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
     image: shirt2,
-    price: "R$ 84,90"
+    price: "R$ 60,00"
   },
   {
     id: 3,
-    name: "Camiseta Tempo é Chegado",
-    description: "Typography inspiradora com versículo bíblico. Uma forma única de carregar a Palavra com você.",
+    name: "Camiseta Básica Areia - Jesus is the way",
+    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     image: shirt3,
-    price: "R$ 69,90"
+    price: "R$ 60,00"
   },
   {
     id: 4,
-    name: "Camiseta Misericórdia",
-    description: "Design exclusivo que celebra a graça divina. Qualidade superior e estilo atemporal.",
+    name: "Camiseta Básica Preta - Jesus is the way",
+    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     image: shirt4,
-    price: "R$ 79,90"
+    price: "R$ 60,00"
   },
   {
     id: 5,
-    name: "Camiseta 2Timóteo 3:16",
-    description: "Mensagem poderosa em design moderno. Ideal para quem busca impactar através do estilo.",
+    name: "Camiseta Básica Areia - Cordeiro",
+    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
     image: shirt5,
-    price: "R$ 84,90"
+    price: "R$ 60,00"
   },
   {
     id: 6,
-    name: "Camiseta Biscoito",
-    description: "Conceito de transformação em arte wearable. Expresse sua jornada de fé com autenticidade.",
-    image: shirt6,
-    price: "R$ 49,90"
+    name: "Camiseta Básica Preta - Cordeiro",
+    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
+    image: shirt5,
+    price: "R$ 60,00"
   }
 ];
 
 export const ProductsSection = () => {
+  const [selectedProducts, setSelectedProducts] = useState<
+    { id: number; name: string; price: string; size: string }[]
+  >([]);
+
+  const handleSelect = (product: { id: number; name: string; price: string; size: string }) => {
+    setSelectedProducts((prev) => [...prev, product]); // permite múltiplos iguais
+  };
+
+  const handleWhatsAppCheckout = () => {
+    if (selectedProducts.length === 0) return;
+
+    const productLines = selectedProducts.map(
+      (p, index) => `${index + 1}. ${p.name} - ${p.price} (Tamanho: ${p.size})`
+    );
+
+    const message = `Olá! Gostaria de comprar os seguintes produtos:\n\n${productLines.join('\n')}`;
+    const url = `https://wa.me/5581999014848?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
+  };
+
   return (
     <section className="products-section py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -68,27 +91,28 @@ export const ProductsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={`${product.id}-${product.name}`} product={product} onSelect={handleSelect} />
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-gradient-card p-8 rounded-2xl shadow-brand max-w-2xl mx-auto">
-            <h3 className="font-brand text-2xl font-semibold mb-6 text-foreground">
-              Não encontrou o que procurava?
-            </h3>
+        {selectedProducts.length > 0 && (
+          <div className="text-center mt-16 flex flex-col items-center space-y-3">
             <Button
-              onClick={() => {
-                const message = "Olá! Gostaria de entrar em contato com a REVEST.";
-                window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
-              }}
+              onClick={handleWhatsAppCheckout}
               variant="whatsapp"
               size="lg"
+              className="px-10 py-4 text-lg"
             >
-              Entre em contato conosco
+              Comprar Produtos Selecionados ({selectedProducts.length})
             </Button>
+            <button
+              onClick={() => setSelectedProducts([])}
+              className="text-sm text-accent border border-accent bg-white px-4 py-2 rounded-md hover:bg-accent hover:text-white transition"
+            >
+              Cancelar minhas compras
+            </button>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

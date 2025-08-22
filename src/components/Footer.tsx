@@ -3,8 +3,8 @@ import revestLogo from '@/assets/revest-logo.png';
 
 export const Footer = () => {
   const handleWhatsApp = () => {
-    const message = "Olá! Gostaria de entrar em contato com a REVEST.";
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    const message = "Olá! Gostaria de entrar em contato com a Loja Recon.";
+    window.open(`https://wa.me/5581999014848?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -21,8 +21,8 @@ export const Footer = () => {
              </div>
              <h3 className="font-brand text-2xl font-bold mb-4"></h3>
             <p className="font-body text-primary-foreground/80 leading-relaxed">
-              Moda cristã com propósito. Vista sua fé com estilo e identidade, 
-              expressando valores eternos através de designs modernos.
+              Moda cristã com propósito. Para uma geração que não tem medo de mostrar em quem crê.
+              Vista sua fé com estilo e identidade, expressando valores eternos através de designs modernos.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export const Footer = () => {
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors"
               >
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp
+                +55 (81) 99901-4848
               </button>
               <a
                 href="mailto:revestclothing@gmail.com"
