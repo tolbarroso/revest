@@ -9,6 +9,14 @@ import shirt5 from '@/assets/camisa-5.png';
 import shirt6 from '@/assets/camisa-6.png';
 import shirt7 from '@/assets/camisa-7.png';
 import shirt8 from '@/assets/camisa-8.png';
+import shirt9 from '@/assets/camisa-9.png';
+import shirt10 from '@/assets/camisa-10.png';
+import shirt11 from '@/assets/camisa-11.png';
+import shirt12 from '@/assets/camisa-12.png';
+import shirt13 from '@/assets/camisa-13.png';
+import shirt14 from '@/assets/camisa-14.png';
+import shirt15 from '@/assets/camisa-15.png';
+import shirt16 from '@/assets/camisa-16.png';
 
 const products = [
   {
@@ -20,38 +28,108 @@ const products = [
   },
   {
     id: 2,
+    name: "Camiseta Oversized Off White - Banquete",
+    description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
+    image: shirt14,
+    price: "R$ 100,00"
+  },
+  {
+    id: 3,
     name: "Camiseta Básica Areia - Banquete",
     description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
     image: shirt2,
     price: "R$ 60,00"
   },
   {
-    id: 3,
+    id: 4,
+    name: "Camiseta Oversized Areia - Banquete",
+    description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
+    image: shirt13,
+    price: "R$ 100,00"
+  },
+  {
+    id: 5,
     name: "Camiseta Básica Areia - Jesus is the way",
     description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     image: shirt3,
     price: "R$ 60,00"
   },
   {
-    id: 4,
+    id: 6,
+    name: "Camiseta Oversized Areia - Jesus is the way",
+    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
+    image: shirt12,
+    price: "R$ 100,00"
+  },
+  {
+    id: 7,
     name: "Camiseta Básica Preta - Jesus is the way",
     description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     image: shirt4,
     price: "R$ 60,00"
   },
   {
-    id: 5,
+    id: 8,
+    name: "Camiseta Oversized Preta - Jesus is the way",
+    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
+    image: shirt10,
+    price: "R$ 100,00"
+  },
+  {
+    id: 9,
     name: "Camiseta Básica Areia - Cordeiro",
     description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
     image: shirt5,
     price: "R$ 60,00"
   },
   {
-    id: 6,
+    id: 10,
+    name: "Camiseta Oversized Areia - Cordeiro",
+    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
+    image: shirt9,
+    price: "R$ 100,00"
+  },
+  {
+    id: 11,
     name: "Camiseta Básica Preta - Cordeiro",
     description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
     image: shirt6,
     price: "R$ 60,00"
+  },
+  {
+    id: 12,
+    name: "Camiseta Oversized Preta - Cordeiro",
+    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
+    image: shirt10,
+    price: "R$ 100,00"
+  },
+  {
+    id: 13,
+    name: "Camiseta Básica Preta - Trindade",
+    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
+    image: shirt7,
+    price: "R$ 60,00"
+  },
+  {
+    id: 14,
+    name: "Camiseta Oversized Preta - Trindade",
+    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
+    image: shirt10,
+    price: "R$ 100,00"
+  },
+  {
+    id: 15,
+    name: "Camiseta Básica Bordô - Trindade",
+    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
+    image: shirt8,
+    price: "R$ 60,00"
+  },
+  {
+    id: 16,
+    name: "Camiseta Oversized Bordô - Trindade",
+    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
+    image: shirt16,
+    price: "R$ 100,00"
   }
 ];
 
