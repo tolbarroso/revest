@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroBanner1 from '@/assets/hero-banner-1.png';
+import heroBanner1 from '@/assets/hero-banner-1.jpg';
 import revestLogo from '@/assets/revest-logo.png';
 
 const heroSlides = [
