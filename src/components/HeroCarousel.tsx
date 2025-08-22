@@ -78,9 +78,6 @@ export const HeroCarousel = () => {
                      className="mx-auto h-16 md:h-20 object-contain filter brightness-0 invert"
                    />
                  </div>
-                 <h1 className="font-brand text-6xl md:text-8xl font-bold mb-4 tracking-wider">
-                   {slide.title}
-                 </h1>
                 <h2 className="font-brand text-2xl md:text-3xl mb-6 text-accent font-semibold">
                   {slide.subtitle}
                 </h2>

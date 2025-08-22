@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ProductCard } from './ProductCard';
 import { Button } from '@/components/ui/button';
 import shirt1 from '@/assets/camisa-1.png';
@@ -49,7 +50,7 @@ const products = [
     id: 6,
     name: "Camiseta Básica Preta - Cordeiro",
     description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
-    image: shirt5,
+    image: shirt6,
     price: "R$ 60,00"
   }
 ];
@@ -96,7 +97,18 @@ export const ProductsSection = () => {
         </div>
 
         {selectedProducts.length > 0 && (
-          <div className="text-center mt-16 flex flex-col items-center space-y-3">
+          <div className="mt-16 text-center flex flex-col items-center space-y-6">
+            <div className="bg-white border border-muted p-6 rounded-lg max-w-xl w-full text-left shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-foreground">Produtos Selecionados:</h3>
+              <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
+                {selectedProducts.map((item, index) => (
+                  <li key={index} className="border-b border-muted pb-2">
+                    {index + 1}. <strong>{item.name}</strong> — {item.price} (Tamanho: {item.size})
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <Button
               onClick={handleWhatsAppCheckout}
               variant="whatsapp"
@@ -105,6 +117,7 @@ export const ProductsSection = () => {
             >
               Comprar Produtos Selecionados ({selectedProducts.length})
             </Button>
+
             <button
               onClick={() => setSelectedProducts([])}
               className="text-sm text-accent border border-accent bg-white px-4 py-2 rounded-md hover:bg-accent hover:text-white transition"
