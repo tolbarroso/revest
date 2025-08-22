@@ -10,7 +10,7 @@ export const BrandSection = () => {
              <img 
                src={revestLogo} 
                alt="REVEST" 
-               className="mx-auto h-12 md:h-16 object-contain"
+               className="mx-auto h-20 md:h-28 object-contain"
              />
            </div>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
