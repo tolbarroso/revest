@@ -16,7 +16,7 @@ export const Footer = () => {
                <img 
                  src={revestLogo} 
                  alt="REVEST" 
-                 className="h-8 object-contain filter brightness-0 invert"
+                 className="h-16 object-contain filter brightness-0 invert"
                />
              </div>
              <h3 className="font-brand text-2xl font-bold mb-4"></h3>
