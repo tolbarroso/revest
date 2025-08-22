@@ -100,7 +100,7 @@ const products = [
     id: 12,
     name: "Camiseta Oversized Preta - Cordeiro",
     description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
-    image: shirt10,
+    image: shirt11,
     price: "R$ 100,00"
   },
   {
