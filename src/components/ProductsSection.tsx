@@ -114,7 +114,7 @@ const products = [
     id: 14,
     name: "Camiseta Oversized Preta - Trindade",
     description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
-    image: shirt10,
+    image: shirt15,
     price: "R$ 100,00"
   },
   {
