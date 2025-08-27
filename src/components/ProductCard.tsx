@@ -2,25 +2,39 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, Check } from 'lucide-react';
 
+interface ProductVariant {
+  name: string;
+  image: string;
+  color: string;
+}
+
 interface Product {
   id: number;
-  name: string;
+  baseName: string;
   description: string;
-  image: string;
   price: string;
+  variants: ProductVariant[];
 }
 
 interface ProductCardProps {
   product: Product;
-  onSelect: (item: { id: number; name: string; price: string; size: string }) => void;
+  onSelect: (item: { id: number; baseName: string; price: string; size: string }) => void;
 }
 
 export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
   const [selectedSize, setSelectedSize] = useState('M');
   const [added, setAdded] = useState(false);
 
+  // começa com a primeira variante
+  const [currentVariant, setCurrentVariant] = useState(product.variants[0]);
+
   const handleAdd = () => {
-    onSelect({ id: product.id, name: product.name, price: product.price, size: selectedSize });
+    onSelect({
+      id: product.id,
+      baseName: currentVariant.name, // agora vai o nome completo da variante
+      price: product.price,
+      size: selectedSize,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 3000);
   };
@@ -29,16 +43,29 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
     <div className="product-card group border rounded-xl overflow-hidden shadow-md bg-white">
       <div className="relative overflow-hidden">
         <img
-          src={product.image}
-          alt={product.name}
+          src={currentVariant.image}
+          alt={currentVariant.name}
           className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 
+      {/* Botões de cor */}
+      <div className="flex justify-center gap-3 my-4">
+        {product.variants.map((variant, idx) => (
+          <div
+            key={idx}
+            style={{ backgroundColor: variant.color }}
+            className="w-6 h-6 rounded-full cursor-pointer border-2 border-gray-300 hover:scale-110 transition"
+            onClick={() => setCurrentVariant(variant)}
+            title={variant.name} // tooltip com o nome
+          />
+        ))}
+      </div>
+
       <div className="p-6">
         <h3 className="font-brand text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
-          {product.name}
+          {currentVariant.name}
         </h3>
 
         <p className="font-body text-sm text-muted-foreground mb-4 leading-snug">

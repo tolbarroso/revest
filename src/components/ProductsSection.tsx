@@ -21,124 +21,92 @@ import shirt16 from '@/assets/camisa-16.png';
 const products = [
   {
     id: 1,
-    name: "Camiseta Básica Off White - Banquete",
+    baseName: "Camiseta Básica - Banquete",
     description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
-    image: shirt1,
-    price: "R$ 60,00"
+    price: "R$ 60,00",
+    variants: [
+      { name: "Camiseta Básica - Banquete (Branca)", image: shirt1, color: "#e0dfd8" },
+      { name: "Camiseta Básica - Banquete (Areia)", image: shirt2, color: "#d9c3a0" },
+    ],
   },
   {
     id: 2,
-    name: "Camiseta Oversized Off White - Banquete",
+    baseName: "Camiseta Oversized - Banquete",
     description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
-    image: shirt14,
-    price: "R$ 100,00"
+    price: "R$ 100,00",
+    variants: [
+      { name: "Camiseta Oversized - Banquete (Areia)", image: shirt13, color: "#d9c3a0" },
+      { name: "Camiseta Oversized - Banquete (Branca)", image: shirt14, color: "#e0dfd8" },
+    ],
   },
   {
     id: 3,
-    name: "Camiseta Básica Areia - Banquete",
-    description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
-    image: shirt2,
-    price: "R$ 60,00"
+    baseName: "Camiseta Básica - Jesus is the way",
+    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
+    price: "R$ 60,00",
+    variants: [
+      { name: "Camiseta Básica - Jesus is the way (Preta)", image: shirt4, color: "#353535" },
+      { name: "Camiseta Básica - Jesus is the way (Areia)", image: shirt3, color: "#d9c3a0" },
+    ],
   },
   {
     id: 4,
-    name: "Camiseta Oversized Areia - Banquete",
-    description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
-    image: shirt13,
-    price: "R$ 100,00"
+    baseName: "Camiseta Oversized - Jesus is the way",
+    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
+    price: "R$ 100,00",
+    variants: [
+      { name: "Camiseta Oversized - Jesus is the way (Preta)", image: shirt10, color: "#353535" },
+      { name: "Camiseta Oversized - Jesus is the way (Areia)", image: shirt12, color: "#d9c3a0" },
+    ],
   },
   {
     id: 5,
-    name: "Camiseta Básica Areia - Jesus is the way",
-    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
-    image: shirt3,
-    price: "R$ 60,00"
+    baseName: "Camiseta Básica - Cordeiro",
+    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
+    price: "R$ 60,00",
+    variants: [
+      { name: "Camiseta Básica - Cordeiro (Areia)", image: shirt5, color: "#d9c3a0" },
+      { name: "Camiseta Básica - Cordeiro (Preta)", image: shirt6, color: "#353535" },
+    ],
   },
   {
     id: 6,
-    name: "Camiseta Oversized Areia - Jesus is the way",
-    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
-    image: shirt12,
-    price: "R$ 100,00"
+    baseName: "Camiseta Oversized Areia - Cordeiro",
+    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
+    price: "R$ 100,00",
+    variants: [
+      { name: "Camiseta Oversized Areia - Cordeiro (Areia)", image: shirt9, color: "#d9c3a0" },
+      { name: "Camiseta Oversized Areia - Cordeiro (Preta)", image: shirt11, color: "#353535" },
+    ],
   },
   {
     id: 7,
-    name: "Camiseta Básica Preta - Jesus is the way",
-    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
-    image: shirt4,
-    price: "R$ 60,00"
+    baseName: "Camiseta Básica Preta - Trindade",
+    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
+    price: "R$ 60,00",
+    variants: [
+      { name: "Camiseta Básica  - Trindade (Vermelha)", image: shirt8, color: "#94302f" },
+      { name: "Camiseta Básica  - Trindade (Preta)", image: shirt7, color: "#353535" },
+    ],
   },
   {
     id: 8,
-    name: "Camiseta Oversized Preta - Jesus is the way",
-    description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
-    image: shirt10,
-    price: "R$ 100,00"
-  },
-  {
-    id: 9,
-    name: "Camiseta Básica Areia - Cordeiro",
-    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
-    image: shirt5,
-    price: "R$ 60,00"
-  },
-  {
-    id: 10,
-    name: "Camiseta Oversized Areia - Cordeiro",
-    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
-    image: shirt9,
-    price: "R$ 100,00"
-  },
-  {
-    id: 11,
-    name: "Camiseta Básica Preta - Cordeiro",
-    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
-    image: shirt6,
-    price: "R$ 60,00"
-  },
-  {
-    id: 12,
-    name: "Camiseta Oversized Preta - Cordeiro",
-    description: "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
-    image: shirt11,
-    price: "R$ 100,00"
-  },
-  {
-    id: 13,
-    name: "Camiseta Básica Preta - Trindade",
+    baseName: "Camiseta Oversized Preta - Trindade",
     description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
-    image: shirt7,
-    price: "R$ 60,00"
+    price: "R$ 100,00",
+    variants: [
+      { name: "Camiseta Oversized  - Trindade (Preta)", image: shirt15, color: "#353535" },
+      { name: "Camiseta Oversized  - Trindade (Vermelha)", image: shirt16, color: "#94302f" },
+    ],
   },
-  {
-    id: 14,
-    name: "Camiseta Oversized Preta - Trindade",
-    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
-    image: shirt15,
-    price: "R$ 100,00"
-  },
-  {
-    id: 15,
-    name: "Camiseta Básica Bordô - Trindade",
-    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
-    image: shirt8,
-    price: "R$ 60,00"
-  },
-  {
-    id: 16,
-    name: "Camiseta Oversized Bordô - Trindade",
-    description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
-    image: shirt16,
-    price: "R$ 100,00"
-  }
 ];
 
 export const ProductsSection = () => {
   const [selectedProducts, setSelectedProducts] = useState<
-    { id: number; name: string; price: string; size: string }[]
+    { id: number; baseName: string; price: string; size: string }[]
   >([]);
 
-  const handleSelect = (product: { id: number; name: string; price: string; size: string }) => {
+  const handleSelect = (product: { id: number; baseName: string; price: string; size: string }) => {
     setSelectedProducts((prev) => [...prev, product]); // permite múltiplos iguais
   };
 
@@ -146,7 +114,7 @@ export const ProductsSection = () => {
     if (selectedProducts.length === 0) return;
 
     const productLines = selectedProducts.map(
-      (p, index) => `${index + 1}. ${p.name} - ${p.price} (Tamanho: ${p.size})`
+      (p, index) => `${index + 1}. ${p.baseName} - ${p.price} (Tamanho: ${p.size})`
     );
 
     const message = `Olá! Gostaria de comprar os seguintes produtos:\n\n${productLines.join('\n')}`;
@@ -170,40 +138,51 @@ export const ProductsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <ProductCard key={`${product.id}-${product.name}`} product={product} onSelect={handleSelect} />
+            <ProductCard key={`${product.id}-${product.baseName}`} product={product} onSelect={handleSelect} />
           ))}
         </div>
 
         {selectedProducts.length > 0 && (
-          <div className="mt-16 text-center flex flex-col items-center space-y-6">
-            <div className="bg-white border border-muted p-6 rounded-lg max-w-xl w-full text-left shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">Produtos Selecionados:</h3>
-              <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
-                {selectedProducts.map((item, index) => (
-                  <li key={index} className="border-b border-muted pb-2">
-                    {index + 1}. <strong>{item.name}</strong> — {item.price} (Tamanho: {item.size})
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <Button
-              onClick={handleWhatsAppCheckout}
-              variant="whatsapp"
-              size="lg"
-              className="px-10 py-4 text-lg"
-            >
-              Comprar Produtos Selecionados ({selectedProducts.length})
-            </Button>
-
+  <div className="mt-16 text-center flex flex-col items-center space-y-6">
+    <div className="bg-white border border-muted p-6 rounded-lg max-w-xl w-full text-left shadow-sm">
+      <h3 className="text-xl font-semibold mb-4 text-foreground">Produtos Selecionados:</h3>
+      <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
+        {selectedProducts.map((item, index) => (
+          <li key={index} className="border-b border-muted pb-2 flex justify-between items-center">
+            <span>
+              {index + 1}. <strong>{item.baseName}</strong> — {item.price} (Tamanho: {item.size})
+            </span>
             <button
-              onClick={() => setSelectedProducts([])}
-              className="text-sm text-accent border border-accent bg-white px-4 py-2 rounded-md hover:bg-accent hover:text-white transition"
+              onClick={() =>
+                setSelectedProducts(prev =>
+                  prev.filter((_, i) => i !== index)
+                )
+              }
+              className="text-red-500 font-bold ml-4 hover:text-red-700 transition"
             >
-              Cancelar minhas compras
+              ×
             </button>
-          </div>
-        )}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <Button
+      onClick={handleWhatsAppCheckout}
+      variant="whatsapp"
+      size="lg"
+      className="px-10 py-4 text-lg"
+    >
+      Comprar Produtos Selecionados ({selectedProducts.length})
+    </Button>
+
+    <button
+      onClick={() => setSelectedProducts([])}
+      className="text-sm text-accent border border-accent bg-white px-4 py-2 rounded-md hover:bg-accent hover:text-white transition"
+    >
+      Cancelar minhas compras
+    </button>
+  </div>
+)}
       </div>
     </section>
   );
