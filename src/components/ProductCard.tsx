@@ -58,8 +58,9 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
             style={{ backgroundColor: variant.color }}
             className="w-6 h-6 rounded-full cursor-pointer border-2 border-gray-300 hover:scale-110 transition"
             onClick={() => setCurrentVariant(variant)}
-            title={variant.name} // tooltip com o nome
+            title={variant.name}
           />
+
         ))}
       </div>
 
