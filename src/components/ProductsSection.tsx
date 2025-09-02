@@ -26,7 +26,7 @@ const products = [
     description: "Inspirada em Mateus 9:13, essa peça declara: “Misericórdia quero, e não sacrifício. Pois não vim chamar justos, mas pecadores.”",
     price: "R$ 70,00",
     variants: [
-      { name: "Camiseta Básica - Banquete (Off White)", image: shirt1, color: "#e0dfd8" },
+      { name: "Camiseta Básica - Banquete (Off-white)", image: shirt1, color: "#e0dfd8" },
       { name: "Camiseta Básica - Banquete (Areia)", image: shirt2, color: "#d9c3a0" },
     ],
   },
@@ -37,7 +37,7 @@ const products = [
     price: "R$ 120,00",
     variants: [
       { name: "Camiseta Oversized - Banquete (Areia)", image: shirt13, color: "#d9c3a0" },
-      { name: "Camiseta Oversized - Banquete (Off White)", image: shirt14, color: "#e0dfd8" },
+      { name: "Camiseta Oversized - Banquete (Off-white)", image: shirt14, color: "#e0dfd8" },
     ],
   },
   {
