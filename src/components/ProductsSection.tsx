@@ -194,6 +194,9 @@ export const ProductsSection = () => {
     { id: number; baseName: string; price: string; size: string }[]
   >([]);
 
+  const [coupon, setCoupon] = useState('');
+  const [appliedCoupon, setAppliedCoupon] = useState('');
+
   const handleSelect = (product: {
     id: number;
     baseName: string;
@@ -201,6 +204,12 @@ export const ProductsSection = () => {
     size: string;
   }) => {
     setSelectedProducts((prev) => [...prev, product]);
+  };
+
+  const handleApplyCoupon = () => {
+    if (!coupon) return;
+    setAppliedCoupon(coupon);
+    setCoupon('');
   };
 
   const handleWhatsAppCheckout = () => {
@@ -211,9 +220,14 @@ export const ProductsSection = () => {
         `${index + 1}. ${p.baseName} - ${p.price} (Tamanho: ${p.size})`
     );
 
+    const couponLine = appliedCoupon
+      ? `\n\nCupom de desconto aplicado: *${appliedCoupon}*`
+      : '';
+
     const message = `Olá! Gostaria de comprar os seguintes produtos:\n\n${productLines.join(
       '\n'
-    )}`;
+    )}${couponLine}`;
+
     const url = `https://wa.me/5581999014848?text=${encodeURIComponent(
       message
     )}`;
@@ -235,6 +249,7 @@ export const ProductsSection = () => {
           </p>
         </div>
 
+        {/* Produtos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <ProductCard
@@ -245,13 +260,14 @@ export const ProductsSection = () => {
           ))}
         </div>
 
+        {/* Carrinho */}
         {selectedProducts.length > 0 && (
           <div className="mt-16 text-center flex flex-col items-center space-y-6">
             <div className="bg-white border border-muted p-6 rounded-lg max-w-xl w-full text-left shadow-sm">
               <h3 className="text-xl font-semibold mb-4 text-foreground">
                 Produtos Selecionados:
               </h3>
-              <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
+              <ul className="space-y-2 text-sm md:text-base text-muted-foreground mb-6">
                 {selectedProducts.map((item, index) => (
                   <li
                     key={index}
@@ -273,7 +289,31 @@ export const ProductsSection = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Cupom de desconto */}
+              <div className="mb-6">
+                <label className="block text-sm font-semibold mb-2">
+                  Cupom de desconto:
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={coupon}
+                    onChange={(e) => setCoupon(e.target.value)}
+                    placeholder="Digite seu cupom"
+                    className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                  <Button onClick={handleApplyCoupon}>Aplicar</Button>
+                </div>
+                {appliedCoupon && (
+                  <p className="mt-2 text-green-600 text-sm">
+                    ✅ Cupom <strong>{appliedCoupon}</strong> aplicado!
+                  </p>
+                )}
+              </div>
             </div>
+
+            {/* Finalizar compra */}
             <Button
               onClick={handleWhatsAppCheckout}
               variant="whatsapp"
@@ -284,7 +324,10 @@ export const ProductsSection = () => {
             </Button>
 
             <button
-              onClick={() => setSelectedProducts([])}
+              onClick={() => {
+                setSelectedProducts([]);
+                setAppliedCoupon('');
+              }}
               className="text-sm text-accent border border-accent bg-white px-4 py-2 rounded-md hover:bg-accent hover:text-white transition"
             >
               Cancelar minhas compras
