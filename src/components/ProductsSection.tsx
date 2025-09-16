@@ -18,6 +18,8 @@ import shirt14 from '@/assets/camisa-14.png';
 import shirt15 from '@/assets/camisa-15.png';
 import shirt16 from '@/assets/camisa-16.png';
 
+const validCoupons = ["LIPIE5"];
+
 const products = [
   {
     id: 1,
@@ -193,9 +195,10 @@ export const ProductsSection = () => {
   const [selectedProducts, setSelectedProducts] = useState<
     { id: number; baseName: string; price: string; size: string }[]
   >([]);
-
-  const [coupon, setCoupon] = useState('');
-  const [appliedCoupon, setAppliedCoupon] = useState('');
+  
+  const [couponInput, setCouponInput] = useState("");
+  const [appliedCoupon, setAppliedCoupon] = useState<string | null>(null);
+  const [couponError, setCouponError] = useState("");
 
   const handleSelect = (product: {
     id: number;
@@ -206,12 +209,6 @@ export const ProductsSection = () => {
     setSelectedProducts((prev) => [...prev, product]);
   };
 
-  const handleApplyCoupon = () => {
-    if (!coupon) return;
-    setAppliedCoupon(coupon);
-    setCoupon('');
-  };
-
   const handleWhatsAppCheckout = () => {
     if (selectedProducts.length === 0) return;
 
@@ -220,19 +217,28 @@ export const ProductsSection = () => {
         `${index + 1}. ${p.baseName} - ${p.price} (Tamanho: ${p.size})`
     );
 
-    const couponLine = appliedCoupon
-      ? `\n\nCupom de desconto aplicado: *${appliedCoupon}*`
-      : '';
+    const couponText = appliedCoupon
+      ? `\n\nCupom aplicado: ${appliedCoupon}`
+      : "";
 
     const message = `Olá! Gostaria de comprar os seguintes produtos:\n\n${productLines.join(
       '\n'
-    )}${couponLine}`;
-
+    )}${couponText}`;
     const url = `https://wa.me/5581999014848?text=${encodeURIComponent(
       message
     )}`;
 
     window.open(url, '_blank');
+  };
+
+  const handleApplyCoupon = () => {
+    if (validCoupons.includes(couponInput.toUpperCase())) {
+      setAppliedCoupon(couponInput.toUpperCase());
+      setCouponError("");
+    } else {
+      setAppliedCoupon(null);
+      setCouponError("Cupom inválido");
+    }
   };
 
   return (
@@ -249,7 +255,6 @@ export const ProductsSection = () => {
           </p>
         </div>
 
-        {/* Produtos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <ProductCard
@@ -260,14 +265,13 @@ export const ProductsSection = () => {
           ))}
         </div>
 
-        {/* Carrinho */}
         {selectedProducts.length > 0 && (
           <div className="mt-16 text-center flex flex-col items-center space-y-6">
             <div className="bg-white border border-muted p-6 rounded-lg max-w-xl w-full text-left shadow-sm">
               <h3 className="text-xl font-semibold mb-4 text-foreground">
                 Produtos Selecionados:
               </h3>
-              <ul className="space-y-2 text-sm md:text-base text-muted-foreground mb-6">
+              <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 {selectedProducts.map((item, index) => (
                   <li
                     key={index}
@@ -289,31 +293,33 @@ export const ProductsSection = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Cupom de desconto */}
-              <div className="mb-6">
-                <label className="block text-sm font-semibold mb-2">
-                  Cupom de desconto:
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={coupon}
-                    onChange={(e) => setCoupon(e.target.value)}
-                    placeholder="Digite seu cupom"
-                    className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                  <Button onClick={handleApplyCoupon}>Aplicar</Button>
-                </div>
-                {appliedCoupon && (
-                  <p className="mt-2 text-green-600 text-sm">
-                    ✅ Cupom <strong>{appliedCoupon}</strong> aplicado!
-                  </p>
-                )}
-              </div>
             </div>
 
-            {/* Finalizar compra */}
+            {/* Área de Cupom */}
+            <div className="w-full max-w-md text-left">
+              <label className="block mb-2 text-sm font-medium text-foreground">
+                Tem um cupom de desconto?
+              </label>
+              <div className="flex space-x-2">
+                <input
+                  type="text"
+                  value={couponInput}
+                  onChange={(e) => setCouponInput(e.target.value)}
+                  placeholder="Digite seu cupom"
+                  className="flex-1 border border-muted rounded-md px-3 py-2"
+                />
+                <Button onClick={handleApplyCoupon}>Aplicar</Button>
+              </div>
+              {couponError && (
+                <p className="text-red-500 text-sm mt-2">{couponError}</p>
+              )}
+              {appliedCoupon && (
+                <p className="text-green-600 text-sm mt-2">
+                  Cupom <strong>{appliedCoupon}</strong> aplicado com sucesso!
+                </p>
+              )}
+            </div>
+
             <Button
               onClick={handleWhatsAppCheckout}
               variant="whatsapp"
@@ -326,7 +332,9 @@ export const ProductsSection = () => {
             <button
               onClick={() => {
                 setSelectedProducts([]);
-                setAppliedCoupon('');
+                setAppliedCoupon(null);
+                setCouponInput("");
+                setCouponError("");
               }}
               className="text-sm text-accent border border-accent bg-white px-4 py-2 rounded-md hover:bg-accent hover:text-white transition"
             >
