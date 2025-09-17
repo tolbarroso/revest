@@ -6,6 +6,9 @@ interface ProductVariant {
   name: string;
   image: string;
   color: string;
+  sizes: {
+    [key: string]: boolean;
+  };
 }
 
 interface Product {
@@ -22,16 +25,19 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
-  const [selectedSize, setSelectedSize] = useState('M');
+  const [currentVariant, setCurrentVariant] = useState(product.variants[0]);
+  const [selectedSize, setSelectedSize] = useState<string | null>(
+    Object.keys(product.variants[0].sizes).find(
+      (size) => product.variants[0].sizes[size]
+    ) || null
+  );
   const [added, setAdded] = useState(false);
 
-  // começa com a primeira variante
-  const [currentVariant, setCurrentVariant] = useState(product.variants[0]);
-
   const handleAdd = () => {
+    if (!selectedSize) return; // impede adicionar sem estoque
     onSelect({
       id: product.id,
-      baseName: currentVariant.name, // agora vai o nome completo da variante
+      baseName: currentVariant.name,
       price: product.price,
       size: selectedSize,
     });
@@ -56,11 +62,20 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
           <div
             key={idx}
             style={{ backgroundColor: variant.color }}
-            className="w-6 h-6 rounded-full cursor-pointer border-2 border-gray-300 hover:scale-110 transition"
-            onClick={() => setCurrentVariant(variant)}
+            className={`w-6 h-6 rounded-full cursor-pointer border-2 ${
+              currentVariant.name === variant.name
+                ? 'border-accent'
+                : 'border-gray-300'
+            } hover:scale-110 transition`}
+            onClick={() => {
+              setCurrentVariant(variant);
+              setSelectedSize(
+                Object.keys(variant.sizes).find((size) => variant.sizes[size]) ||
+                  null
+              );
+            }}
             title={variant.name}
           />
-
         ))}
       </div>
 
@@ -74,18 +89,19 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
         </p>
 
         <div className="mb-4">
-          <label className="block text-sm font-semibold text-foreground mb-1">Tamanho:</label>
+          <label className="block text-sm font-semibold text-foreground mb-1">
+            Tamanho:
+          </label>
           <select
             className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent transition"
-            value={selectedSize}
+            value={selectedSize || ''}
             onChange={(e) => setSelectedSize(e.target.value)}
           >
-            <option value="P">P</option>
-            <option value="M">M</option>
-            <option value="G">G</option>
-            <option value="GG">GG</option>
-            <option value="G1">G1</option>
-            <option value="G2">G2</option>
+            {Object.entries(currentVariant.sizes).map(([size, inStock]) => (
+              <option key={size} value={size} disabled={!inStock}>
+                {size} {inStock ? '' : '(Esgotado)'}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -96,6 +112,7 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
 
           <Button
             onClick={handleAdd}
+            disabled={!selectedSize} // bloqueia botão se tudo esgotado
             variant={added ? 'outline' : 'default'}
             className={`flex items-center gap-2 px-4 py-2 transition-all duration-300 ${
               added ? 'bg-green-100 text-green-700 border border-green-500' : ''
@@ -109,7 +126,7 @@ export const ProductCard = ({ product, onSelect }: ProductCardProps) => {
             ) : (
               <>
                 <ShoppingCart className="w-4 h-4" />
-                Adicionar
+                {selectedSize ? 'Adicionar' : 'Esgotado'}
               </>
             )}
           </Button>
