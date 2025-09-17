@@ -18,7 +18,7 @@ import shirt14 from '@/assets/camisa-14.png';
 import shirt15 from '@/assets/camisa-15.png';
 import shirt16 from '@/assets/camisa-16.png';
 
-const validCoupons = ["LIPIE5"];
+const validCoupons = ["LIPIE5","Alegria5"];
 
 const products = [
   {
@@ -32,13 +32,13 @@ const products = [
         name: "Camiseta Básica - Banquete (Off-white)",
         image: shirt1,
         color: "#e0dfd8",
-        sizes: { P: false, M: true, G: true, GG: true, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
       {
         name: "Camiseta Básica - Banquete (Areia)",
         image: shirt2,
         color: "#d9c3a0",
-        sizes: { P: false, M: false, G: true, GG: true, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
     ],
   },
@@ -53,13 +53,13 @@ const products = [
         name: "Camiseta Oversized - Banquete (Areia)",
         image: shirt13,
         color: "#d9c3a0",
-        sizes: { P: false, M: true, G: true, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
       {
         name: "Camiseta Oversized - Banquete (Off-white)",
         image: shirt14,
         color: "#e0dfd8",
-        sizes: { P: false, M: false, G: false, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
     ],
   },
@@ -74,13 +74,13 @@ const products = [
         name: "Camiseta Básica - Jesus is the way (Preta)",
         image: shirt4,
         color: "#353535",
-        sizes: { P: false, M: false, G: true, GG: true, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
       {
         name: "Camiseta Básica - Jesus is the way (Areia)",
         image: shirt3,
         color: "#d9c3a0",
-        sizes: { P: false, M: false, G: false, GG: true, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
     ],
   },
@@ -95,13 +95,13 @@ const products = [
         name: "Camiseta Oversized - Jesus is the way (Preta)",
         image: shirt10,
         color: "#353535",
-        sizes: { P: false, M: false, G: true, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
       {
         name: "Camiseta Oversized - Jesus is the way (Areia)",
         image: shirt12,
         color: "#d9c3a0",
-        sizes: { P: false, M: false, G: true, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
     ],
   },
@@ -116,13 +116,13 @@ const products = [
         name: "Camiseta Básica - Cordeiro (Areia)",
         image: shirt5,
         color: "#d9c3a0",
-        sizes: { P: false, M: true, G: true, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
       {
         name: "Camiseta Básica - Cordeiro (Preta)",
         image: shirt6,
         color: "#353535",
-        sizes: { P: true, M: true, G: true, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
     ],
   },
@@ -137,13 +137,13 @@ const products = [
         name: "Camiseta Oversized - Cordeiro (Areia)",
         image: shirt9,
         color: "#d9c3a0",
-        sizes: { P: false, M: true, G: false, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
       {
         name: "Camiseta Oversized - Cordeiro (Preta)",
         image: shirt11,
         color: "#353535",
-        sizes: { P: true, M: true, G: false, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
     ],
   },
@@ -158,13 +158,13 @@ const products = [
         name: "Camiseta Básica - Trindade (Vermelha)",
         image: shirt8,
         color: "#94302f",
-        sizes: { P: true, M: true, G: true, GG: false, G1: true, G2: true }, // falta confirmar
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true }, // falta confirmar
       },
       {
         name: "Camiseta Básica - Trindade (Preta)",
         image: shirt7,
         color: "#353535",
-        sizes: { P: false, M: false, G: true, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
       },
     ],
   },
@@ -179,13 +179,13 @@ const products = [
         name: "Camiseta Oversized - Trindade (Preta)",
         image: shirt15,
         color: "#353535",
-        sizes: { P: false, M: true, G: false, GG: false, G1: false, G2: false },
+        sizes: { P: true, M: true, G: true, GG: true},
       },
       {
         name: "Camiseta Oversized - Trindade (Vermelha)",
         image: shirt16,
         color: "#94302f",
-        sizes: { P: true, M: true, G: true, GG: true,}, // falta confirmar
+        sizes: { P: true, M: true, G: true, GG: true},
       },
     ],
   },
