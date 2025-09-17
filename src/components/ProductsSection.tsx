@@ -18,7 +18,7 @@ import shirt14 from '@/assets/camisa-14.png';
 import shirt15 from '@/assets/camisa-15.png';
 import shirt16 from '@/assets/camisa-16.png';
 
-const validCoupons = ["LIPIE5","Alegria5"];
+const validCoupons = ["LIPIE5","ALEGRIA5"];
 
 const products = [
   {
@@ -193,7 +193,7 @@ const products = [
 
 export const ProductsSection = () => {
   const [selectedProducts, setSelectedProducts] = useState<
-    { id: number; baseName: string; price: string; size: string }[]
+    { id: number; baseName: string; price: string; size: string; numericPrice: number }[]
   >([]);
   
   const [couponInput, setCouponInput] = useState("");
@@ -206,28 +206,39 @@ export const ProductsSection = () => {
     price: string;
     size: string;
   }) => {
-    setSelectedProducts((prev) => [...prev, product]);
+    const numericPrice = parseFloat(product.price.replace("R$ ", "").replace(",", "."));
+    setSelectedProducts((prev) => [...prev, { ...product, numericPrice }]);
   };
+
+  // cálculo do subtotal, desconto e total
+  const subtotal = selectedProducts.reduce((acc, p) => acc + p.numericPrice, 0);
+
+  let discount = 0;
+  if (appliedCoupon === "ALEGRIA5" || appliedCoupon === "LIPIE5") {
+    discount = subtotal * 0.05; // 5% de desconto
+  }
+
+  const total = subtotal - discount;
 
   const handleWhatsAppCheckout = () => {
     if (selectedProducts.length === 0) return;
 
     const productLines = selectedProducts.map(
       (p, index) =>
-        `${index + 1}. ${p.baseName} - ${p.price} (Tamanho: ${p.size})`
+        `${index + 1}. ${p.baseName} - R$ ${p.numericPrice.toFixed(2).replace(".", ",")} (Tamanho: ${p.size})`
     );
 
     const couponText = appliedCoupon
-      ? `\n\nCupom aplicado: ${appliedCoupon}`
+      ? `\n\nCupom aplicado: ${appliedCoupon} (-R$ ${discount.toFixed(2).replace(".", ",")})`
       : "";
+
+    const totalText = `\n\nTotal: R$ ${total.toFixed(2).replace(".", ",")}`;
 
     const message = `Olá! Gostaria de comprar os seguintes produtos:\n\n${productLines.join(
       '\n'
-    )}${couponText}`;
-    const url = `https://wa.me/5581999014848?text=${encodeURIComponent(
-      message
-    )}`;
-
+    )}${couponText}${totalText}`;
+    
+    const url = `https://wa.me/5581999014848?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
 
@@ -278,7 +289,7 @@ export const ProductsSection = () => {
                     className="border-b border-muted pb-2 flex justify-between items-center"
                   >
                     <span>
-                      {index + 1}. <strong>{item.baseName}</strong> — {item.price} (Tamanho: {item.size})
+                      {index + 1}. <strong>{item.baseName}</strong> — R$ {item.numericPrice.toFixed(2).replace(".", ",")} (Tamanho: {item.size})
                     </span>
                     <button
                       onClick={() =>
@@ -293,6 +304,15 @@ export const ProductsSection = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Subtotal, desconto e total */}
+              <div className="mt-4">
+                <p className="font-semibold">Subtotal: R$ {subtotal.toFixed(2).replace(".", ",")}</p>
+                {discount > 0 && (
+                  <p className="text-green-600 font-semibold">Desconto: -R$ {discount.toFixed(2).replace(".", ",")}</p>
+                )}
+                <p className="font-bold text-lg">Total: R$ {total.toFixed(2).replace(".", ",")}</p>
+              </div>
             </div>
 
             {/* Área de Cupom */}
