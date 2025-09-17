@@ -18,7 +18,7 @@ import shirt14 from '@/assets/camisa-14.png';
 import shirt15 from '@/assets/camisa-15.png';
 import shirt16 from '@/assets/camisa-16.png';
 
-const validCoupons = ["LIPIE5", "Alegria5"];
+const validCoupons = ["LIPIE5"];
 
 const products = [
   {
@@ -32,13 +32,13 @@ const products = [
         name: "Camiseta Básica - Banquete (Off-white)",
         image: shirt1,
         color: "#e0dfd8",
-        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
+        sizes: { P: false, M: true, G: true, GG: true, G1: false, G2: false },
       },
       {
         name: "Camiseta Básica - Banquete (Areia)",
         image: shirt2,
         color: "#d9c3a0",
-        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
+        sizes: { P: false, M: false, G: true, GG: true, G1: false, G2: false },
       },
     ],
   },
@@ -53,13 +53,13 @@ const products = [
         name: "Camiseta Oversized - Banquete (Areia)",
         image: shirt13,
         color: "#d9c3a0",
-        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
+        sizes: { P: false, M: true, G: true, GG: false, G1: false, G2: false },
       },
       {
         name: "Camiseta Oversized - Banquete (Off-white)",
         image: shirt14,
         color: "#e0dfd8",
-        sizes: { P: true, M: true, G: true, GG: true, G1: true, G2: true },
+        sizes: { P: false, M: false, G: false, GG: false, G1: false, G2: false },
       },
     ],
   },
@@ -70,8 +70,18 @@ const products = [
       "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     price: "R$ 70,00",
     variants: [
-     /* { name: "Camiseta Básica - Jesus is the way (Preta)", image: shirt4, color: "#353535" },*/
-      { name: "Camiseta Básica - Jesus is the way (Areia)", image: shirt3, color: "#d9c3a0" },
+      {
+        name: "Camiseta Básica - Jesus is the way (Preta)",
+        image: shirt4,
+        color: "#353535",
+        sizes: { P: false, M: false, G: true, GG: true, G1: false, G2: false },
+      },
+      {
+        name: "Camiseta Básica - Jesus is the way (Areia)",
+        image: shirt3,
+        color: "#d9c3a0",
+        sizes: { P: false, M: false, G: false, GG: true, G1: false, G2: false },
+      },
     ],
   },
   {
@@ -81,8 +91,18 @@ const products = [
       "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     price: "R$ 120,00",
     variants: [
-     /* { name: "Camiseta Oversized - Jesus is the way (Preta)", image: shirt10, color: "#353535" }, */
-      { name: "Camiseta Oversized - Jesus is the way (Areia)", image: shirt12, color: "#d9c3a0" },
+      {
+        name: "Camiseta Oversized - Jesus is the way (Preta)",
+        image: shirt10,
+        color: "#353535",
+        sizes: { P: false, M: false, G: true, GG: false, G1: false, G2: false },
+      },
+      {
+        name: "Camiseta Oversized - Jesus is the way (Areia)",
+        image: shirt12,
+        color: "#d9c3a0",
+        sizes: { P: false, M: false, G: true, GG: false, G1: false, G2: false },
+      },
     ],
   },
   {
@@ -92,8 +112,18 @@ const products = [
       "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
     price: "R$ 70,00",
     variants: [
-      { name: "Camiseta Básica - Cordeiro (Areia)", image: shirt5, color: "#d9c3a0" },
-    /*  { name: "Camiseta Básica - Cordeiro (Preta)", image: shirt6, color: "#353535" },*/
+      {
+        name: "Camiseta Básica - Cordeiro (Areia)",
+        image: shirt5,
+        color: "#d9c3a0",
+        sizes: { P: false, M: true, G: true, GG: false, G1: false, G2: false },
+      },
+      {
+        name: "Camiseta Básica - Cordeiro (Preta)",
+        image: shirt6,
+        color: "#353535",
+        sizes: { P: true, M: true, G: true, GG: false, G1: false, G2: false },
+      },
     ],
   },
   {
@@ -103,8 +133,18 @@ const products = [
       "Essa estampa nasce da visão gloriosa de Apocalipse 5:13: “Ao que está assentado no trono e ao Cordeiro sejam o louvor, a honra, a glória e o poder para todo o sempre.”",
     price: "R$ 120,00",
     variants: [
-      { name: "Camiseta Oversized Areia - Cordeiro (Areia)", image: shirt9, color: "#d9c3a0" },
-    /*  { name: "Camiseta Oversized Areia - Cordeiro (Preta)", image: shirt11, color: "#353535" },*/
+      {
+        name: "Camiseta Oversized - Cordeiro (Areia)",
+        image: shirt9,
+        color: "#d9c3a0",
+        sizes: { P: false, M: true, G: false, GG: false, G1: false, G2: false },
+      },
+      {
+        name: "Camiseta Oversized - Cordeiro (Preta)",
+        image: shirt11,
+        color: "#353535",
+        sizes: { P: true, M: true, G: false, GG: false, G1: false, G2: false },
+      },
     ],
   },
   {
@@ -114,8 +154,18 @@ const products = [
       "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
     price: "R$ 70,00",
     variants: [
-      { name: "Camiseta Básica  - Trindade (Vermelha)", image: shirt8, color: "#94302f" },
-    /*  { name: "Camiseta Básica  - Trindade (Preta)", image: shirt7, color: "#353535" },*/
+      {
+        name: "Camiseta Básica - Trindade (Vermelha)",
+        image: shirt8,
+        color: "#94302f",
+        sizes: { P: true, M: true, G: true, GG: false, G1: true, G2: true }, // falta confirmar
+      },
+      {
+        name: "Camiseta Básica - Trindade (Preta)",
+        image: shirt7,
+        color: "#353535",
+        sizes: { P: false, M: false, G: true, GG: false, G1: false, G2: false },
+      },
     ],
   },
   {
@@ -125,8 +175,18 @@ const products = [
       "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
     price: "R$ 120,00",
     variants: [
-    /*  { name: "Camiseta Oversized  - Trindade (Preta)", image: shirt15, color: "#353535" },*/
-      { name: "Camiseta Oversized  - Trindade (Vermelha)", image: shirt16, color: "#94302f" },
+      {
+        name: "Camiseta Oversized - Trindade (Preta)",
+        image: shirt15,
+        color: "#353535",
+        sizes: { P: false, M: true, G: false, GG: false, G1: false, G2: false },
+      },
+      {
+        name: "Camiseta Oversized - Trindade (Vermelha)",
+        image: shirt16,
+        color: "#94302f",
+        sizes: { P: true, M: true, G: true, GG: true,}, // falta confirmar
+      },
     ],
   },
 ];
