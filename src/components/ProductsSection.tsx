@@ -18,7 +18,7 @@ import shirt14 from '@/assets/camisa-14.png';
 import shirt15 from '@/assets/camisa-15.png';
 import shirt16 from '@/assets/camisa-16.png';
 
-const validCoupons = ["LIPIE5"];
+const validCoupons = ["LIPIE5", "Alegria5"];
 
 const products = [
   {
