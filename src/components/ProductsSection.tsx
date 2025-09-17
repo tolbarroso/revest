@@ -18,7 +18,6 @@ import shirt14 from '@/assets/camisa-14.png';
 import shirt15 from '@/assets/camisa-15.png';
 import shirt16 from '@/assets/camisa-16.png';
 
-
 const products = [
   {
     id: 1,
@@ -46,7 +45,7 @@ const products = [
     description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     price: "R$ 70,00",
     variants: [
-      { name: "Camiseta Básica - Jesus is the way (Preta)", image: shirt4, color: "#353535" },
+     /* { name: "Camiseta Básica - Jesus is the way (Preta)", image: shirt4, color: "#353535" },*/
       { name: "Camiseta Básica - Jesus is the way (Areia)", image: shirt3, color: "#d9c3a0" },
     ],
   },
@@ -56,7 +55,7 @@ const products = [
     description: "Essa peça carrega uma das declarações mais marcantes de Jesus: “Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.” (João 14:6)",
     price: "R$ 120,00",
     variants: [
-      { name: "Camiseta Oversized - Jesus is the way (Preta)", image: shirt10, color: "#353535" },
+     /* { name: "Camiseta Oversized - Jesus is the way (Preta)", image: shirt10, color: "#353535" }, */
       { name: "Camiseta Oversized - Jesus is the way (Areia)", image: shirt12, color: "#d9c3a0" },
     ],
   },
@@ -67,7 +66,7 @@ const products = [
     price: "R$ 70,00",
     variants: [
       { name: "Camiseta Básica - Cordeiro (Areia)", image: shirt5, color: "#d9c3a0" },
-      { name: "Camiseta Básica - Cordeiro (Preta)", image: shirt6, color: "#353535" },
+    /*  { name: "Camiseta Básica - Cordeiro (Preta)", image: shirt6, color: "#353535" },*/
     ],
   },
   {
@@ -77,7 +76,7 @@ const products = [
     price: "R$ 120,00",
     variants: [
       { name: "Camiseta Oversized Areia - Cordeiro (Areia)", image: shirt9, color: "#d9c3a0" },
-      { name: "Camiseta Oversized Areia - Cordeiro (Preta)", image: shirt11, color: "#353535" },
+    /*  { name: "Camiseta Oversized Areia - Cordeiro (Preta)", image: shirt11, color: "#353535" },*/
     ],
   },
   {
@@ -87,7 +86,7 @@ const products = [
     price: "R$ 70,00",
     variants: [
       { name: "Camiseta Básica  - Trindade (Vermelha)", image: shirt8, color: "#94302f" },
-      { name: "Camiseta Básica  - Trindade (Preta)", image: shirt7, color: "#353535" },
+    /*  { name: "Camiseta Básica  - Trindade (Preta)", image: shirt7, color: "#353535" },*/
     ],
   },
   {
@@ -96,7 +95,7 @@ const products = [
     description: "O desenho traz em unidade o Pai, o Filho e o Espírito Santo, representando o mistério e a glória da Trindade.",
     price: "R$ 120,00",
     variants: [
-      { name: "Camiseta Oversized  - Trindade (Preta)", image: shirt15, color: "#353535" },
+    /*  { name: "Camiseta Oversized  - Trindade (Preta)", image: shirt15, color: "#353535" },*/
       { name: "Camiseta Oversized  - Trindade (Vermelha)", image: shirt16, color: "#94302f" },
     ],
   },
