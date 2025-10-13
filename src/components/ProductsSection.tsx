@@ -214,7 +214,7 @@ export const ProductsSection = () => {
   const subtotal = selectedProducts.reduce((acc, p) => acc + p.numericPrice, 0);
 
   let discount = 0;
-  if (appliedCoupon === "ALEGRIA5" || appliedCoupon === "LIPIE5") {
+  if (appliedCoupon === "ALEGRIA5" || appliedCoupon === "LIPIE5" || appliedCoupon === "ANDERSON5") {
     discount = subtotal * 0.05; // 5% de desconto
   }
 
